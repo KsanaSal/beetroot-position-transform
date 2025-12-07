@@ -287,8 +287,49 @@ ul {
     align-items: center;
     width: 270px;
     height: 180px;
-    background-color: var(--gray-background-color);
+    background-color: var(--light-background-color);
     border-radius: 8px;
+    cursor: pointer;
+}
+.flip-card {
+    width: 270px;
+    height: 180px;
+    perspective: 1000px;
+    border-radius: 8px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card-inner:hover {
+    transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+.flip-card-front {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--gray-background-color);
+}
+.flip-card-back {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--black-background-color);
 }
 .main-info-list-item-img {
     margin: 0 auto;
